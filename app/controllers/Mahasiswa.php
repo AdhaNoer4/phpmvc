@@ -18,4 +18,13 @@ class Mahasiswa extends Controller
         $this->view('mahasiswa/detail', $data);
         $this->view('templates/footer');
     }
+
+    public function tambah()
+    {
+        // kirim data ke model mahasiswa dan jalankan method tambahDataMahasiswa
+        if ($this->model('Mahasiswa_model')->tambahDataMahasiswa($_POST) > 0) {
+            header('Location:' . BASEURL . '/mahasiswa');
+            exit;
+        }
+    }
 }

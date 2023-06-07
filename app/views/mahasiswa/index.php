@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-lg-6">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#formModal">
+            <button type="button" class="btn btn-primary mb-3 tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
                 Add +
             </button>
             <h3>Daftar Mahasiswa</h3>
@@ -19,6 +19,7 @@
                     <li class="list-group-item">
                         <?= $mhs['nama']; ?>
                         <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge text-bg-danger float-end ms-1" onclick="return confirm('Apakah anda yakin ingin meghapus data?')">Hapus</a>
+                        <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge text-bg-success float-end ms-1 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $mhs['id']; ?>">Edit</a>
                         <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge text-bg-primary float-end ms-1">Detail</a>
 
                     </li>
@@ -43,6 +44,7 @@
             <div class="modal-body">
                 <!-- kirim data ke controllers Mahasiswa dan jalankan method tambah  -->
                 <form action="<?= BASEURL; ?>/mahasiswa/tambah" method="post">
+                    <input type="hidden" name="id" id='id'>
                     <div class="form-group mb-3">
                         <label for="nama">Nama</label>
                         <input type="text" name="nama" id="nama" class="form-control"">
@@ -71,7 +73,7 @@
                     </div>
 
             </div>
-            <div class=" modal-footer">
+            <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Add Data</button>
                 </form>

@@ -5,7 +5,7 @@
             <h6 class="card-subtitle mb-2 text-body-secondary"><?= $data['mhs']['nrp']; ?></h6>
             <p class="card-text"><?= $data['mhs']['email']; ?></p>
             <p class="card-text"><?= $data['mhs']['jurusan']; ?></p>
-            <a class="btn btn-primary" href="<?= BASEURL; ?>/mahasiswa" role="button">Kembali</a>
+            <a class="btn btn-outline-danger" href="<?= BASEURL; ?>/mahasiswa" role="button"><i class="fa-solid fa-delete-left fa-fade fa-lg" style="color: #ff0000;"></i></a>
         </div>
     </div>
 </div>

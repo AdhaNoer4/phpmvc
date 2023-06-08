@@ -18,7 +18,7 @@
             <form action="<?= BASEURL; ?>/mahasiswa/cari" method="post">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Cari Mahasiswa..." id="keyword" name="keyword" autocomplete="off" autofocus>
-                    <button class="btn btn-outline-secondary" type="submit" id="tombolCari">Search</button>
+                    <button class="btn btn-outline-primary" type="submit" id="tombolCari"><i class="fa-solid fa-magnifying-glass fa-bounce"></i></button>
                 </div>
             </form>
         </div>
@@ -34,9 +34,9 @@
                 <?php foreach ($data['mhs'] as $mhs) : ?>
                     <li class="list-group-item">
                         <?= $mhs['nama']; ?>
-                        <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge text-bg-danger float-end ms-1" onclick="return confirm('Apakah anda yakin ingin meghapus data?')">Hapus</a>
-                        <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge text-bg-success float-end ms-1 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $mhs['id']; ?>">Edit</a>
-                        <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge text-bg-primary float-end ms-1">Detail</a>
+                        <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge float-end ms-1" onclick="return confirm('Apakah anda yakin ingin meghapus data?')"><i class="fa-solid fa-trash" style="color: #ea502a;"></i></a>
+                        <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge float-end ms-1 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $mhs['id']; ?>"><i class="fa-solid fa-pen-to-square" style="color: #16ca19;"></i></a>
+                        <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge float-end ms-1"><i class="fa-solid fa-circle-info fa-lg" style="color: #1968f0;"></i></a>
 
                     </li>
                 <?php endforeach; ?>
